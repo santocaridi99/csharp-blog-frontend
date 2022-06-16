@@ -58,7 +58,7 @@
 
     function loadList() {
 
-        axios.get('http://localhost:5000/api/posts').then((res) => {
+        axios.get('https://localhost:5000/api/posts').then((res) => {
 
             console.log('risultato ok', res);
 
@@ -115,7 +115,7 @@
 
         if (isDelete) {
 
-            axios.delete(`http://localhost:5000/api/posts/${itemId}`).then((res) => {
+            axios.delete(`https://localhost:5000/api/posts/${itemId}`).then((res) => {
 
                 loadList();
 
