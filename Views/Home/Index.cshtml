@@ -7,6 +7,10 @@
                    href="@Url.Action("Create", "Home")">
                     Nuovo post
                 </a>
+                 <a class="btn btn-primary"
+                   href="@Url.Action("CreateFile", "Home")">
+                    Nuovo post con file img
+                </a>
             </div>
 
             <h3 class="js_no_post text-center d-none">Non hai inserito alcun post</h3>
@@ -53,32 +57,20 @@
 @section Scripts {
 
 <script type="text/javascript">
-
     loadList();
-
     function loadList() {
-
+        //utilizza axios per la chiamata all'api dei post
         axios.get('https://localhost:5000/api/posts').then((res) => {
-
             console.log('risultato ok', res);
-
             if (res.data.length == 0) {
-
                 document.querySelector('.js_no_post').classList.remove('d-none');
                 document.querySelector('.js_post_table').classList.add('d-none');
-
             } else {
-
                 document.querySelector('.js_post_table').classList.remove('d-none');
                 document.querySelector('.js_no_post').classList.add('d-none');
-
-
                 document.querySelector('.js_post_table tbody').innerHTML = '';
-
                 res.data.forEach(post => {
-
                     console.log('post', post);
-
                     document.querySelector('.js_post_table tbody').innerHTML += 
                         `
                         <tr>
@@ -104,29 +96,20 @@
                 });
             }
         });
-
+       
     }
-
     // da notare che è collegato all'onclick del button delete del singolo elemento
     function deleteItem(itemId) {
-
         // dire che nella realtà si potrebbe fare un alert di confirma più elaborato, ma per semplicità qua lo lasciamo così
         const isDelete = confirm('Sei sicuro di voler eliminare il post selezionato?');
-
         if (isDelete) {
-
             axios.delete(`https://localhost:5000/api/posts/${itemId}`).then((res) => {
-
                 loadList();
-
             }).catch((res) => {
-
                 alert('Errore!');
-
                 console.error('risultato errore', res);
             });
         }
     }
-
 </script>
 }
