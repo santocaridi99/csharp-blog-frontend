@@ -20,11 +20,6 @@ namespace csharp_blog_frontend.Controllers
         }
 
         [HttpGet]
-        public IActionResult Create()
-        {
-            return View();
-        }
-        [HttpGet]
         public IActionResult CreateFile()
         {
             return View();
