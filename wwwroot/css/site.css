@@ -38,3 +38,11 @@ body {
 .post-single-image-container {
     margin-bottom: 10px;
 }
+.bg-green{
+    background-color:greenyellow;
+    padding:5px;
+}
+
+bordo{
+    border:2px solid black;
+}
