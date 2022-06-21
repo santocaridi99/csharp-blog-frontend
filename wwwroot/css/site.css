@@ -8,6 +8,21 @@ html {
     }
 }
 
+header{
+    z-index:1000;
+}
+.navbar-bg {
+    background-color: #2b2bff;
+}
+
+.navbar>.container {
+    background-color: #2b2bff;
+}
+
+.navbar>.container>a{
+    color:white;
+}
+
 html {
     position: relative;
     min-height: 100%;
@@ -40,7 +55,7 @@ body {
 }
 .bg-green{
     background-color:greenyellow;
-    padding:5px;
+    padding:6px;
 }
 
 bordo{
